@@ -12,8 +12,14 @@ class Layer
         $collection = $proceed();
         $collection
             ->addAttributeToSelect('*')
-            ->addAttributeToFilter('discontinue', array('neq' => 1));
-            //echo "<pre>"; print_r($collection->getData()); die;
+            ->addAttributeToFilter(array(
+                array(
+                    'attribute' => 'discontinue',
+                    'null' => true),
+                array(
+                    'attribute' => 'discontinue',
+                    'eq' => '0')
+            ));
         return $collection;
     }
 
