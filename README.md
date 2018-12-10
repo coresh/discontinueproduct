@@ -12,3 +12,8 @@ How to install
 2. Do git clone
 3. Run php bin/magento setup upgrade command
 4. Flush cache and check in admin
+
+Known issue
+1. Attribute value is assigned to those products which are created and updated after plugin install. Because old product can not have this attribute value in table.
+
+2. Temporary solution for this is to save all products using mass option in magento. I will fix it in next update
